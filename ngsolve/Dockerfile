@@ -13,6 +13,6 @@ WORKDIR /root/src/ngsolve
 RUN git submodule update --init --recursive
 RUN mkdir build
 WORKDIR /root/src/ngsolve/build
-RUN cmake .. -DUSE_MPI=ON -DUSE_MKL=ON -DMKL_INCLUDE_DIR=/usr/include/mkl/
+RUN cmake .. -DUSE_OCC=ON -DUSE_MPI=ON -DUSE_MKL=ON -DMKL_INCLUDE_DIR=/usr/include/mkl/
 RUN make -j9 install
 CMD netgen /root/src/ngsolve/py_tutorials/navierstokes.py
